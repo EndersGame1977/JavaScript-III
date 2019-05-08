@@ -27,20 +27,11 @@ user.greet()
 
 // Principle 3
 // code example for New Binding
-function greet(l1, l2, l3) {
-    alert(
-        `Hello, my name is ${this.name} and I know ${l1}, ${l2}, and ${l3}`
-    )
+function User(name, age) {
+    this.name = name
+    this.age = age
 }
-const user = {
-    name: 'Tyler',
-    age: 27,
-}
-const languages = ['JavaScript', 'Ruby', 'Python']
-const newFn = greet.bind(user, languages[0], languages[1], languages[2])
-newFn() // alerts "Hello, my name is Tyler and I know JavaScript, Ruby, and Python"
-//.call() and .bind() are very simaler. Before invoking .bind() you need to assign it a new variable. With .call() you do not.
-//The .bind() creats a new variable.
+const me = new User('Tyler', 27)
 
 // Principle 4
 // code example for Explicit Binding
